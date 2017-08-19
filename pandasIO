@@ -1,0 +1,28 @@
+import pandas as pd
+
+import numpy as np
+
+import os
+
+os.chdir(r'C:\Users\a198199\Documents\python & analytics')
+
+p = pd.read_csv('Uasin_Gishu_Pop_Pyramid_Age_Groups2009.csv')
+
+p.head()
+Out[6]: 
+       Age  Female    Male  Male_Inverse  OBJECTID
+0   0 - 10  129614  131874       -131874         0
+1  10 - 20  103059  101241       -101241         1
+2  20 - 30   97189   91986        -91986         2
+3  30 - 40   53166   57642        -57642         3
+4  40 - 50   28332   31920        -31920         4
+
+p.tail()
+Out[7]: 
+       Age  Female   Male  Male_Inverse  OBJECTID
+4  40 - 50   28332  31920        -31920         4
+5  50 - 60   15319  16988        -16988         5
+6  60 - 70    8634   8836         -8836         6
+7  70 - 80    4857   4616         -4616         7
+8      80+    4783   3553         -3553         8
+
