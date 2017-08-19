@@ -26,3 +26,26 @@ Out[7]:
 7  70 - 80    4857   4616         -4616         7
 8      80+    4783   3553         -3553         8
 
+p.set_index('Age',inplace=True) 
+
+""""this code sets any column you choose as then dataset index"""
+Out[10]: '"this code sets any column you choose as then dataset index'
+
+p
+Out[11]: 
+         Female    Male  Male_Inverse  OBJECTID
+Age                                            
+0 - 10   129614  131874       -131874         0
+10 - 20  103059  101241       -101241         1
+20 - 30   97189   91986        -91986         2
+30 - 40   53166   57642        -57642         3
+40 - 50   28332   31920        -31920         4
+50 - 60   15319   16988        -16988         5
+60 - 70    8634    8836         -8836         6
+70 - 80    4857    4616         -4616         7
+80+        4783    3553         -3553         8
+
+p.to_csv('Uasin_Gishu_Reloaded.csv')
+
+
+
