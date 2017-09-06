@@ -1,0 +1,85 @@
+: dic = {'evolution':['Ivysaur','Charmeleon','Wartortle','Metapod'],
+'hp':[45,39,44,45], 'name': ['Bulbasaur','Charmander','Squirtle','Caterpie'],
+'pokedex':['yes','no','yes','no'], 'type':['grass','fire','water','bug']}
+
+dic
+Out[40]: 
+{'evolution': ['Ivysaur', 'Charmeleon', 'Wartortle', 'Metapod'],
+ 'hp': [45, 39, 44, 45],
+ 'name': ['Bulbasaur', 'Charmander', 'Squirtle', 'Caterpie'],
+ 'pokedex': ['yes', 'no', 'yes', 'no'],
+ 'type': ['grass', 'fire', 'water', 'bug']}
+
+df = DataFrame(dic)
+
+df
+Out[42]: 
+    evolution  hp        name pokedex   type
+0     Ivysaur  45   Bulbasaur     yes  grass
+1  Charmeleon  39  Charmander      no   fire
+2   Wartortle  44    Squirtle     yes  water
+3     Metapod  45    Caterpie      no    bug
+
+df.reindex(columns=['name','type','hp','evolution','pokedex'])
+Out[43]: 
+         name   type  hp   evolution pokedex
+0   Bulbasaur  grass  45     Ivysaur     yes
+1  Charmander   fire  39  Charmeleon      no
+2    Squirtle  water  44   Wartortle     yes
+3    Caterpie    bug  45     Metapod      no
+df2 = df.reindex(columns=['name','type','hp','evolution','pokedex'])
+
+df2
+Out[47]: 
+         name   type  hp   evolution pokedex
+0   Bulbasaur  grass  45     Ivysaur     yes
+1  Charmander   fire  39  Charmeleon      no
+2    Squirtle  water  44   Wartortle     yes
+3    Caterpie    bug  45     Metapod      no
+
+df2.insert(5,'place')
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-49-b8884b304ebf> in <module>()
+----> 1 df2.insert(5,'place')
+
+TypeError: insert() missing 1 required positional argument: 'value'
+
+df2
+Out[50]: 
+         name   type  hp   evolution pokedex
+0   Bulbasaur  grass  45     Ivysaur     yes
+1  Charmander   fire  39  Charmeleon      no
+2    Squirtle  water  44   Wartortle     yes
+3    Caterpie    bug  45     Metapod      no
+
+df2.insert(3, 'place',['Nairobi','Kisumu','Mombasa','Limuru'])
+
+df2
+Out[52]: 
+         name   type  hp    place   evolution pokedex
+0   Bulbasaur  grass  45  Nairobi     Ivysaur     yes
+1  Charmander   fire  39   Kisumu  Charmeleon      no
+2    Squirtle  water  44  Mombasa   Wartortle     yes
+3    Caterpie    bug  45   Limuru     Metapod      no
+
+df2
+Out[53]: 
+         name   type  hp    place   evolution pokedex
+0   Bulbasaur  grass  45  Nairobi     Ivysaur     yes
+1  Charmander   fire  39   Kisumu  Charmeleon      no
+2    Squirtle  water  44  Mombasa   Wartortle     yes
+3    Caterpie    bug  45   Limuru     Metapod      no
+
+type(df2.name)
+Out[54]: pandas.core.series.Series
+
+type(df2.pokedex)
+Out[55]: pandas.core.series.Series
+
+df2.values
+Out[56]: 
+array([['Bulbasaur', 'grass', 45, 'Nairobi', 'Ivysaur', 'yes'],
+       ['Charmander', 'fire', 39, 'Kisumu', 'Charmeleon', 'no'],
+       ['Squirtle', 'water', 44, 'Mombasa', 'Wartortle', 'yes'],
+       ['Caterpie', 'bug', 45, 'Limuru', 'Metapod', 'no']], dtype=object)
